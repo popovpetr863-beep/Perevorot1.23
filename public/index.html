@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TableTop — Переворот</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="glow"></div>
+<main>
+<header><div class="logo">♛</div><div><div class="eyebrow">PRIVATE TABLETOP CLUB</div><h1>ПЕРЕВОРОТ</h1><p>Блеф. Влияние. Последняя карта.</p></div></header>
+<section id="lobby" class="panel lobby">
+  <div class="intro"><div class="seal">♛</div><h2>Создай стол для своей компании</h2><p>Комната создаётся мгновенно. Отправь друзьям ссылку или пятизначный код.</p></div>
+  <label>Твоё имя<input id="name" maxlength="20" placeholder="Например, Пётр"></label>
+  <div class="joinrow"><button id="create" class="gold">Создать комнату</button><span>или</span><input id="code" maxlength="5" placeholder="КОД"><button id="join">Подключиться</button></div>
+  <div id="status"></div><div class="features">🔒 Приватные карты · ⏱ 15 секунд на вызов · 📱 Телефон и ПК</div>
+</section>
+<section id="game" hidden>
+  <div class="top panel"><div><small>КОМНАТА</small><b id="room"></b></div><div class="title"><small>ИГРА</small><strong>♛ ПЕРЕВОРОТ</strong></div><div id="turn" class="turn"></div><button id="copy">🔗 Ссылка</button><button id="start" class="gold" hidden>Начать игру</button></div>
+  <div class="layout">
+    <aside class="panel side"><div class="sect"><h3>Игроки</h3><span id="count"></span></div><div id="players"></div></aside>
+    <section class="center">
+      <div id="lastAction" class="lastAction"></div>
+      <div id="notice" class="notice" hidden></div><div id="privateReveal" class="privateReveal" hidden></div>
+      <div id="board" class="board"></div>
+      <div id="hand" class="hand"></div>
+      <div id="actions" class="actions"></div>
+    </section>
+    <aside class="panel journal"><div class="sect"><h3>Хроника</h3><span>LIVE</span></div><div id="log"></div></aside>
+  </div>
+</section>
+</main>
+<script src="/socket.io/socket.io.js"></script><script src="app.js"></script>
+</body></html>
